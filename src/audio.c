@@ -1,15 +1,15 @@
 #include <gb/gb.h>
-#include "../include/hUGEDriver.h"
+#include "hUGEDriver.h"
 #include "cbtfx.h"
 #include "audio.h"
 #include "vars.h"
 
 /// @brief Initializes audio functions. Sets audio registers and enables sound playback.
-void initAudio()
+void initAudio(void)
 {
     // Enable audio output by setting up the correct registers.
-    NR52_REG = 0x80;
-    NR51_REG = 0xFF;
+    NR52_REG = AUDENA_ON;
+    NR51_REG = AUDTERM_ALL_LEFT | AUDTERM_ALL_RIGHT;
     NR50_REG = 0x54;
 
     // Add sound update functions to VBlank
@@ -29,10 +29,10 @@ void initAudio()
 }
 
 /// @brief Mute all audio channels
-void muteAudio()
+void muteAudio(void)
 {
     // Flush current register values
-    NR52_REG = 0;
+    NR52_REG = AUDENA_OFF;
 
     hUGE_mute_channel(HT_CH1, 1);
     hUGE_mute_channel(HT_CH2, 1);
@@ -41,11 +41,11 @@ void muteAudio()
 }
 
 /// @brief Unmute all audio channels
-void unmuteAudio()
+void unmuteAudio(void)
 {
     // Enable audio output
-    NR52_REG = 0x80;
-    NR51_REG = 0xFF;
+    NR52_REG = AUDENA_ON;
+    NR51_REG = AUDTERM_ALL_LEFT | AUDTERM_ALL_RIGHT;
     NR50_REG = 0x54;
 
     hUGE_mute_channel(HT_CH1, 0);
@@ -55,7 +55,7 @@ void unmuteAudio()
 }
 
 /// @brief Remove audio update from VBlank
-void disableAudio()
+void disableAudio(void)
 {
     __critical
     {
@@ -64,7 +64,7 @@ void disableAudio()
 }
 
 /// @brief Advance audio tick for playback
-void updateAudio()
+void updateAudio(void)
 {
     if (gamestate != GAMESTATE_PAUSED && hero.state != HEROSTATE_DIEING)
     {

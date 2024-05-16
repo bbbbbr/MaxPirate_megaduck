@@ -1,6 +1,6 @@
 #ifndef __VARS_H__
 #define __VARS_H__
-#include "../include/hUGEDriver.h"
+#include "hUGEDriver.h"
 
 // ----- Defines -----
 

@@ -7,7 +7,7 @@
 #include "vars.h"
 
 /// @brief Handles inputs on main menu screen
-void handleInputsMenu()
+void handleInputsMenu(void)
 {
     joypadCurrent = joypad();
 
@@ -22,7 +22,7 @@ void handleInputsMenu()
 }
 
 /// @brief Handles inputs during main gameplay loop
-void handleInputsPlaying()
+void handleInputsPlaying(void)
 {
     // Save current frame inputs
     joypadCurrent = joypad();
@@ -146,7 +146,7 @@ void handleInputsPlaying()
 }
 
 /// @brief Handles input during pause screen
-void handleInputsPaused()
+void handleInputsPaused(void)
 {
     joypadCurrent = joypad();
 
@@ -161,7 +161,7 @@ void handleInputsPaused()
 
 
 /// @brief Handles inputs on score screen
-void handleInputsScore()
+void handleInputsScore(void)
 {
     joypadCurrent = joypad();
 

@@ -7,7 +7,7 @@
 #include "collision.h"
 
 /// @brief Handle hero collisions with current level hitmaps
-void getCollisions()
+void getCollisions(void)
 {
     // Get bg collisions
     checkCollisionBackground(hero.movement, hero.x, hero.y, HERO_SPEED);

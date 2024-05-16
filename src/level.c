@@ -9,7 +9,7 @@
 #include "vars.h"
 
 /// @brief Initialize level
-void initLevel()
+void initLevel(void)
 {
     gamestate = GAMESTATE_PLAYING;
     hero.state = HEROSTATE_NORMAL;
@@ -50,7 +50,7 @@ void loadLevel(uint8_t numberEnemies)
 }
 
 /// @brief Selects a random level from the pool and loads it
-void loadNextLevel()
+void loadNextLevel(void)
 {
     // Reset hero position after warp
     if (hero.x > 143)

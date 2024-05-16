@@ -5,11 +5,11 @@
 #include "../include/hitmapsPool.h"
 #include "../res/generalTilesIntro_map.h"
 #include "../res/generalTilesOutro_map.h"
-#include "../res/generalTiles_Map.h"
-#include "../res/generalTiles_Map2.h"
-#include "../res/generalTiles_Map3.h"
-#include "../res/generalTiles_Map4.h"
-#include "../res/generalTiles_Map5.h"
+#include "../res/generalTiles_map.h"
+#include "../res/generalTiles_map2.h"
+#include "../res/generalTiles_map3.h"
+#include "../res/generalTiles_map4.h"
+#include "../res/generalTiles_map5.h"
 
 /// @brief List of hitmaps by level id
 static const uint8_t hitMaps[GAME_MAPNUMBER] = {
@@ -77,13 +77,13 @@ static const uint8_t doorLocationsRightY[GAME_MAPNUMBER] = {
 };
 
 /// @brief Initialize level
-void initLevel();
+void initLevel(void);
 
 /// @brief Loads random level
 /// @param numberEnemies Number of enemies to spawn
 void loadLevel(uint8_t numberEnemies);
 
 /// @brief Selects a random level from the pool and loads it
-void loadNextLevel();
+void loadNextLevel(void);
 
 #endif // _LEVEL_DBG_H_

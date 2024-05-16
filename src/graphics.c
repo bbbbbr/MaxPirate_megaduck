@@ -5,11 +5,11 @@
 #include "../res/generalTiles.h"
 #include "../res/generalTilesIntro_map.h"
 #include "../res/generalTilesOutro_map.h"
-#include "../res/generalTiles_Map.h"
-#include "../res/generalTiles_Map2.h"
-#include "../res/generalTiles_Map3.h"
-#include "../res/generalTiles_Map4.h"
-#include "../res/generalTiles_Map5.h"
+#include "../res/generalTiles_map.h"
+#include "../res/generalTiles_map2.h"
+#include "../res/generalTiles_map3.h"
+#include "../res/generalTiles_map4.h"
+#include "../res/generalTiles_map5.h"
 #include "../res/heroTiles.h"
 #include "../res/introTiles.h"
 #include "../res/introTiles_Map.h"
@@ -23,7 +23,7 @@
 #include "vars.h"
 
 /// @brief Load intro card graphics
-void initGfxIntro()
+void initGfxIntro(void)
 {
     DISPLAY_OFF;
 
@@ -38,7 +38,7 @@ void initGfxIntro()
 }
 
 /// @brief Load main menu graphics
-void initGfxMainMenu()
+void initGfxMainMenu(void)
 {
     DISPLAY_OFF;
 
@@ -96,7 +96,7 @@ void initGfx(unsigned char *bgTiles, const unsigned char *bgMap, unsigned char *
 }
 
 /// @brief Load score graphics
-void initGfxScore()
+void initGfxScore(void)
 {
     DISPLAY_OFF;
     HIDE_WIN;
@@ -121,7 +121,7 @@ void initGfxScore()
 }
 
 /// @brief Update energy count on window
-void updateEnergyHUDGfx()
+void updateEnergyHUDGfx(void)
 {
     // Count up until energy value is reached
     for (iterator2 = 0; iterator2 < HERO_ENERGYMAX; ++iterator2)
@@ -140,7 +140,7 @@ void updateEnergyHUDGfx()
 }
 
 /// @brief Update enemy count on window
-void updateEnemyHUDGfx()
+void updateEnemyHUDGfx(void)
 {
     if (killedEnemies > 999)
     {
@@ -156,7 +156,7 @@ void updateEnemyHUDGfx()
 }
 
 /// @brief Replace closed gate graphics with empty tiles
-void openDoorsGfx()
+void openDoorsGfx(void)
 {
 
     for (iterator2 = 0; iterator2 < 4; ++iterator2)

@@ -1,7 +1,7 @@
 #include <gb/gb.h>
 #include <stdint.h>
 #include <rand.h>
-#include "../include/hUGEDriver.h"
+#include "hUGEDriver.h"
 #include "audio.h"
 #include "cbtfx.h"
 #include "collision.h"
@@ -12,7 +12,7 @@
 #include "level.h"
 #include "vars.h"
 
-void updateMenu()
+void updateMenu(void)
 {
     ++temp;
     if (temp == 60)
@@ -48,7 +48,7 @@ void updateMenu()
 }
 
 /// @brief Update method for intro card. Runs down a timer and loads the main menu.
-void updateIntro()
+void updateIntro(void)
 {
     if (--temp == 0)
     {
@@ -68,7 +68,7 @@ void updateIntro()
 }
 
 /// @brief Animate window to slide up.
-void updatePausing()
+void updatePausing(void)
 {
     HIDE_SPRITES;
     move_win(7, GAME_WINPAUSEDY + temp);
@@ -81,7 +81,7 @@ void updatePausing()
 }
 
 /// @brief Animate window to slide down.
-void updateUnpausing()
+void updateUnpausing(void)
 {
     move_win(7, GAME_WINPLAYINGY - temp);
 
@@ -94,7 +94,7 @@ void updateUnpausing()
 }
 
 /// @brief Update method for score card. Runs down a timer and loads the main menu.
-void updateScore()
+void updateScore(void)
 {
     if (--scoreTimer == 0)
     {
@@ -115,7 +115,7 @@ void updateScore()
 }
 
 /// @brief Hero is dieing loop
-void updateDieing()
+void updateDieing(void)
 {
     if (--scoreTimer == 0)
     {

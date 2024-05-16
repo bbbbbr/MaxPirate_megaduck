@@ -2,7 +2,7 @@
 #define __COLLISION_H__
 
 /// @brief Handle hero collisions with current level hitmaps
-void getCollisions();
+void getCollisions(void);
 
 /// @brief Get tile from current hitmap based on position. Sets `targetTileLeft`, `targetTileRight`, `targetTileUp` and `targetTileDown` based on directions given.
 /// @param direction Direction flags

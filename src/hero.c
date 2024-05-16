@@ -11,7 +11,7 @@
 #include "vars.h"
 
 /// @brief Draw and animate hero sprite
-void drawHero()
+void drawHero(void)
 {
     switch (hero.state)
     {
@@ -184,7 +184,7 @@ void drawHero()
 }
 
 /// @brief Main hero routine
-void updateHero()
+void updateHero(void)
 {
     // Check if hero has died
     if (hero.health == 0 && hero.state != HEROSTATE_DIEING)
@@ -193,8 +193,8 @@ void updateHero()
         // Quick fix to flush sound registers
         muteAudio();
 
-        NR52_REG = 0x80;
-        NR51_REG = 0xFF;
+        NR52_REG = AUDENA_ON;
+        NR51_REG = AUDTERM_ALL_LEFT | AUDTERM_ALL_RIGHT;
         NR50_REG = 0x54;
 
         for (iterator = 0; iterator < ENEMY_MAXNUMBER; ++iterator)
@@ -250,7 +250,7 @@ void updateHero()
 }
 
 /// @brief Handle knockback during hitstate
-void handleHitstate()
+void handleHitstate(void)
 {
     if (hero.state == HEROSTATE_HIT)
     {
@@ -298,7 +298,7 @@ void handleHitstate()
 }
 
 /// @brief Main weapon routine
-void updateWeapon()
+void updateWeapon(void)
 {
     // Disable weapon if timer runs out
     if (--weapon.timer == 0)

@@ -2,7 +2,7 @@
 #include <rand.h>
 #include <stdint.h>
 #include <string.h>
-#include "../include/hUGEDriver.h"
+#include "hUGEDriver.h"
 #include "../res/sfx.h"
 #include "cbtfx.h"
 #include "collision.h"
@@ -12,7 +12,7 @@
 #include "vars.h"
 
 /// @brief Spawn enemy in the next available slot.
-void spawnEnemy()
+void spawnEnemy(void)
 {
     // Find empty enemyslot to spawn enemy
     if (numberEnemiesTotal)
@@ -90,7 +90,7 @@ void initEnemies(uint8_t parNumberEnemies)
 }
 
 /// @brief Draw and animate active enemies
-void drawEnemies()
+void drawEnemies(void)
 {
     // Iterate over enemy slots
     for (iterator = 0; iterator < ENEMY_MAXNUMBER; ++iterator)
@@ -253,7 +253,7 @@ void drawEnemies()
 }
 
 /// @brief Update method. Handles main enemy behaviour.
-void updateEnemies()
+void updateEnemies(void)
 {
     // Iterate over enemy slots
     for (iterator = 0; iterator < ENEMY_MAXNUMBER; ++iterator)
