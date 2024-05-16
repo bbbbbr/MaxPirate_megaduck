@@ -1,3 +1,13 @@
+## (forked build of Max Pirate for the Mega Duck console)
+This is a small fork of [Max Pirate](https://github.com/MWehrstedt/MaxPirate) which supports running on the Mega Duck.
+
+The main changes are:
+- Update to GBDK 4.3.0 (not part of the repo)
+- Change to Makefile build system with `gb` and `megaduck` targets
+- Update to mostly current [patched hUGEDriver](https://github.com/bbbbbr/hUGEDriver) with both GB and MegaDuck builds
+  - Conditionally include the right driver library based on the build target
+
+------
 # Max Pirate
 A simple top down action game for the original Game Boy (DMG). Made with GBDK Version 4.0.5. Aims to run on original hardware. This code is not optimized, especially the tiles and tile management could be better. The self-imposed goal was to restrict myself to the base cartridge, no MBC.
 
